@@ -1,11 +1,11 @@
 // Code goes here
 (function() {
 
-var AboutController = function($scope, $http){
+var AboutController = function($scope, $http, $sce){
 	$.getJSON("assets/data/info.json", function( data ) {
 		$scope.$apply(function(){
 	   		$scope.name = data.name;
-	   		$scope.description = data.description;
+	   		$scope.description = $sce.trustAsHtml(data.description);
 	   	});
 	});
 };
@@ -19,5 +19,5 @@ var AboutController = function($scope, $http){
 			}).otherwise({redirectTo: "/"});
 	});
 
-    app.controller("AboutController", ["$scope","$http", AboutController]);
+    app.controller("AboutController", ["$scope","$http","$sce", AboutController]);
 })();
