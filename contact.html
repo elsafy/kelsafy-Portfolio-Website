@@ -10,18 +10,18 @@
       <div class="col-lg-8 col-lg-offset-2">
         <form role="form" name = "contactForm" ng-submit="sendMsg(contactForm)">
           <div class="form-group">
-            <input type="name" required class="form-control" id="NameInputEmail1" placeholder="Your Name" ng-model="name">
+            <input type="name" required class="form-control" id="NameInputEmail1" placeholder="Your Name" ng-model="formData.inputName">
             <br>
           </div>
           <div class="form-group">
-            <input type="email" required class="form-control" id="exampleInputEmail1" placeholder="Your email" ng-model="email">
+            <input type="email" required class="form-control" id="exampleInputEmail1" placeholder="Your email" ng-model="formData.inputEmail">
             <br>
           </div>
           <div class="form-group">
-            <input type="name" required class="form-control" id="subjectEmail1" placeholder="Subject" ng-model="subject">
+            <input type="name" required class="form-control" id="subjectEmail1" placeholder="Subject" ng-model="formData.inputSubject">
             <br>
           </div>
-          <textarea required class="form-control" rows="6" placeholder="Enter your text here" ng-model="text"></textarea>
+          <textarea required class="form-control" rows="6" placeholder="Enter your text here" ng-model="formData.inputMessage"></textarea>
           <br>
           <button type="submit" class="btn btn-success" value="Save">SUBMIT</button>
         </form>
