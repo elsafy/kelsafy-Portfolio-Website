@@ -11,11 +11,10 @@ var AboutController = function($scope, $http, $sce){
 };
 
 var ContactController = function($scope, $http, $sce){
-	$scope.contact = {
-        sendMsg: function() {
-        	console.log("sdsdsd");
-            console.log($scope.contact.name);
-        }
+	$scope.sendMsg = function(contactForm) {
+		if(contactForm.$valid){
+        	console.log($scope.email);
+		}
     }	
 };
 

@@ -8,7 +8,7 @@
     </div>
     <div class="row mt">
       <div class="col-lg-8 col-lg-offset-2">
-        <form role="form" ng-submit="form.$valid && contact.sendMsg()">
+        <form role="form" name = "contactForm" ng-submit="sendMsg(contactForm)">
           <div class="form-group">
             <input type="name" required class="form-control" id="NameInputEmail1" placeholder="Your Name" ng-model="name">
             <br>
