@@ -254,18 +254,39 @@ bt {
   -o-transition-duration: 0.5s;
 }
 
-.social-fb:hover {
-	color: #3B5998;
+.circle{
+	border-radius: 50%;
+	margin: 0.2em;
+	font-size: 3em;
 }
 
-.social-ln:hover {
-	color: #4099FF;
+.social-fb{
+	background: #3B5998;
+	color: #FFFFFF;
+  	padding: 0.25em 0.45em;
 }
 
-.social-cl:hover {
-	color: #d34836;
+.social-ln{
+	background: #4099FF;
+	color: #FFFFFF;
+  	padding: 0.25em 0.25em;
 }
 
-.social-em:hover {
-	color: #f39c12;
+.social-cl{
+	background: #1abc9c;
+	color: #FFFFFF;
+  	padding: 0.25em 0.25em;
+}
+
+.social-em{
+	background: #d34836;
+	color: #FFFFFF;
+  	padding: 0.25em 0.25em;
+}
+
+
+.social-pn{
+	background: #d34836;
+	color: #FFFFFF;
+  	padding: 0.25em 0.4em;
 }
