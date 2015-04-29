@@ -1,7 +1,3 @@
 {
-	"toEmail" : "karim.elsafy@gmail.com",
-	"host" : "mx1.hostinger.ae",
-	"port" :2525,
-	"userName" : "contactus@kelsafy.com",
-	"password" : "contactus"
+	"toEmail" : "contactus@kelsafy.com"
 }

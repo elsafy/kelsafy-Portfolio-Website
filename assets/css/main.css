@@ -284,9 +284,13 @@ bt {
   	padding: 0.25em 0.25em;
 }
 
-
 .social-pn{
 	background: #d34836;
 	color: #FFFFFF;
   	padding: 0.25em 0.4em;
+}
+
+#email-result{
+  padding: 15px;
+  margin-top: 10px;
 }
