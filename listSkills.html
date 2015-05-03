@@ -1,0 +1,23 @@
+<!-- +++++ Welcome Section +++++ -->
+<div id="ww">
+  <div class="container">
+    <div class="row mt">
+      <div class="col-lg-6 col-lg-offset-3 centered">
+        <h3>My Skills</h3>
+      </div>
+    </div>
+    <div class="row mt">
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="skill in skillsArray">
+				<div class="skill-name">{{skill.name}}</div>
+				<img src="assets/img/skills/{{skill.image}}" class="img-rounded skill-image" alt="{{skill.name}}" width="80" height="80">
+			
+			</li>
+		</ul>
+    </div>
+    <!-- /row -->
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /ww -->

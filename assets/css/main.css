@@ -294,3 +294,11 @@ bt {
   padding: 15px;
   margin-top: 10px;
 }
+
+.skill-name{
+	display: inline-block;
+}
+
+.skill-image{
+	display: inline-block;
+}
