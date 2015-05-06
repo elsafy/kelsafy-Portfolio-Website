@@ -1,17 +1,7 @@
-/*
- * Author: Carlos Alvarez
- * URL: http://alvarez.is
- *
- * Project Name: STANLEY - Free Bootstrap 3 Theme
- * Version: 1.0
- * URL: http://blacktie.co
- */
-
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-
+@import url(http://fonts.googleapis.com/css?family=Crafty+Girls);
+ 
 body {
   	background-color: #ffffff;
-  	font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #555;
@@ -22,7 +12,6 @@ body {
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: #333;
 }
@@ -295,10 +284,30 @@ bt {
   margin-top: 10px;
 }
 
+.list-group-item{
+	background-color: transparent;
+}
+
 .skill-name{
 	display: inline-block;
+	font-family: 'Crafty Girls', cursive;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 22px;
+	color: #555;
 }
 
 .skill-image{
 	display: inline-block;
+}
+
+.skill-percent{
+	display: inline-block;
+	width:   100%;
+	float: right;
+	background: white;
+	margin-top: 5%;
+}
+
+.skill-percent>.progress-bar{
 }

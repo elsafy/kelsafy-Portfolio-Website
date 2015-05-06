@@ -40,7 +40,6 @@
 			url     : 'http://kelsafy.com/backend/getAllSkills.php',
 		}).success(function(data){
 			$scope.skillsArray = data;
-			console.log(data);
 		});
 	};
 
