@@ -1,6 +1,19 @@
 // Code goes here
 (function() {
-
+	
+	var mainController = function($scope, $rootScope, $sce) {
+		$.getJSON("assets/data/info.json", function( data ) {
+			$scope.$apply(function(){
+				$scope.name = data.name;
+				$scope.facebook = $sce.trustAsHtml(data.facebook);
+				$scope.linkedin = $sce.trustAsHtml(data.linkedin);
+				$scope.email = $sce.trustAsHtml(data.email);
+				$scope.phone = $sce.trustAsHtml(data.phone);
+				$scope.location = $sce.trustAsHtml(data.location);
+			});
+		});
+	};
+	
 	var AboutController = function($scope, $http, $sce){
 		$.getJSON("assets/data/info.json", function( data ) {
 			$scope.$apply(function(){
@@ -33,13 +46,39 @@
 		}	
 	};
 
-	var ListSkillsController = function($scope, $http, $sce){
+	var ListSkillsController = function($scope, $http, $routeParams){
+		var url = 'http://kelsafy.com/backend/getAllSkills.php';
+		if($routeParams.skillId == undefined){
+			$scope.headline = "My Skills";
+		} else{
+			url += "?projectId=" + $routeParams.skillId;
+		}
 		$http({
 			method  : 'GET',
 			dataType: 'jsonp',
-			url     : 'http://kelsafy.com/backend/getAllSkills.php',
+			url     : url,
 		}).success(function(data){
-			$scope.skillsArray = data;
+			if($scope.headline == undefined)
+				$scope.headline = "Skills for project: " + data["name"];
+			$scope.skillsArray = data["skills"];
+		});
+	};
+	
+	var ListProjectsController = function($scope, $http, $routeParams){
+		var url = 'http://kelsafy.com/backend/getAllProjects.php';
+		if($routeParams.projectId == undefined){
+			$scope.headline = "My Projects";
+		} else{
+			url += "?skillId=" + $routeParams.projectId;
+		}
+		$http({
+			method  : 'GET',
+			dataType: 'jsonp',
+			url     : url,
+		}).success(function(data){
+			if($scope.headline == undefined)
+				$scope.headline = "projects used skill: " + data["name"];
+			$scope.projectsArray = data["projects"];
 		});
 	};
 
@@ -55,10 +94,22 @@
 			}).when("/listSkills", {
 				templateUrl: "/listSkills.html",
 				controller: "ListSkillsController"
+			}).when("/listSkills/:skillId", {
+				templateUrl: "/listSkills.html",
+				controller: "ListSkillsController"
+			}).when("/listProjects", {
+				templateUrl: "/listProjects.html",
+				controller: "ListProjectsController"
+			}).when("/listProjects/:projectId", {
+				templateUrl: "/listProjects.html",
+				controller: "ListProjectsController"
 			}).otherwise({redirectTo: "/"});
 	});
 
-    app.controller("AboutController", ["$scope","$http","$sce", AboutController])
+    app.controller("mainController", ["$scope","$rootScope","$sce", mainController])
+		.controller("AboutController", ["$scope","$http","$sce", AboutController])
     	.controller("ContactController", ["$scope","$http","$sce", ContactController])
-		.controller("ListSkillsController", ["$scope","$http", ListSkillsController]);
+		.controller("ListSkillsController", ["$scope","$http", "$routeParams", ListSkillsController])
+		.controller("ListProjectsController", ["$scope","$http", "$routeParams", ListProjectsController]);
+	
 })();

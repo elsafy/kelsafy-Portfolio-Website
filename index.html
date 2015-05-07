@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="kelsafy">
+<html lang="en" ng-app="kelsafy" ng-controller="mainController">
 
 <head>
   <meta charset="utf-8">
@@ -9,7 +9,7 @@
   <meta name="author" content="">
   <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-  <title>Karim El Safy</title>
+  <title>{{name}}</title>
   <!-- Bootstrap core CSS -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
@@ -39,11 +39,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/#/">Karim El Safy</a>
+        <a class="navbar-brand" href="/#/">{{name}}</a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a>Work</a>
+          <li><a href="/#/listProjects">Projects</a>
           </li>
           <li><a href="/#/listSkills">Skills</a>
           </li>
@@ -65,11 +65,11 @@
     <div>
       <div class="text-center center-block">
         <br />
-        <a href="https://www.facebook.com/karim.elsafy"><i id="social" class="fa fa-facebook circle fa-2x social-fb"></i></a>
-        <a href="https://www.linkedin.com/in/karimelsafy"><i id="social" class="fa fa-linkedin circle fa-2x social-ln"></i></a>
-        <a href="mailto:karim.elsafy@gmail.com"><i id="social" class="fa fa-envelope circle fa-2x social-em"></i></a>
-        <a href="tel:+201007277077"><i id="social" class="fa fa-phone circle fa-2x social-cl"></i></a>
-        <a href="https://goo.gl/maps/NBtFh"><i id="social" class="fa  fa-map-marker circle fa-2x social-pn"></i></a>
+        <a href="{{facebook}}"><i id="social" class="fa fa-facebook circle fa-2x social-fb"></i></a>
+        <a href="{{linkedin}}"><i id="social" class="fa fa-linkedin circle fa-2x social-ln"></i></a>
+        <a href="mailto:{{email}}"><i id="social" class="fa fa-envelope circle fa-2x social-em"></i></a>
+        <a href="tel:{{phone}}"><i id="social" class="fa fa-phone circle fa-2x social-cl"></i></a>
+        <a href="{{location}}"><i id="social" class="fa  fa-map-marker circle fa-2x social-pn"></i></a>
       </div>
     </div>
   </div>

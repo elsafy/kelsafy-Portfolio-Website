@@ -1,4 +1,9 @@
 {
 	"name" : "Karim El Safy",
+	"facebook" : "https://www.facebook.com/karim.elsafy",
+	"linkedin" : "https://www.linkedin.com/in/karimelsafy",
+	"email" : "karim.elsafy@gmail.com",
+	"phone" : "+201007277077",
+	"location" : "https://goo.gl/maps/NBtFh",
 	"description" : "Hi This is Karim El Safy, Software Engineer, this website contains informations about me, my work, samples of previous work, and some blog posts. I don't talk too much so don't expect alot of blog posts. The source code of this website is open source at <a href='https://github.com/elsafy/kelsafy'>github</a>, feel free to do whatever you want!"
 }
