@@ -1,0 +1,25 @@
+<!-- +++++ Welcome Section +++++ -->
+<div id="ww">
+  <div class="container">
+    <div class="row mt">
+      <div class="col-lg-6 col-lg-offset-3 centered">
+        <h3>{{headline}}</h3>
+      </div>
+    </div>
+    <div class="row mt">
+		<ul class="list-group row">
+			<li class="list-group-item" ng-repeat="project in projectsArray">
+				<img ng-src="/assets/img/projects/{{project.image}}" class="img-rounded project-image" alt="{{project.name}}"onerror="this.onerror=null;this.src='/assets/img/projects/project-default.png';" width="200" height="200">
+				<div class="project-name">{{project.name}}</div>
+				<div class="project-description">{{project.description}}</div>
+				<div class="project-date">{{project.startdate}} to {{project.enddate}}</div>
+				<a  href="/#/listSkills/{{project.id}}" class="skills-count">{{project.skills_count}}</a>
+			</li>
+		</ul>
+    </div>
+    <!-- /row -->
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /ww -->

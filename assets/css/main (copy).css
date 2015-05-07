@@ -1,7 +1,17 @@
-@import url(http://fonts.googleapis.com/css?family=Lobster);
- 
+/*
+ * Author: Carlos Alvarez
+ * URL: http://alvarez.is
+ *
+ * Project Name: STANLEY - Free Bootstrap 3 Theme
+ * Version: 1.0
+ * URL: http://blacktie.co
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
 body {
   	background-color: #ffffff;
+  	font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #555;
@@ -12,6 +22,7 @@ body {
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
+	font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: #333;
 }
@@ -37,7 +48,7 @@ p {
 
 /* Links */
 a {
-    color: #0070b0;
+    color: #1abc9c;
     word-wrap: break-word;
 
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -84,8 +95,8 @@ a:after {
 }
 
 .navbar-inverse {
-	background-color: #0070b0;
-	border-color: #00283f;
+	background-color: #1abc9c;
+	border-color: #16a085;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -111,7 +122,7 @@ a:after {
 }
 
 .progress-bar-theme {
-  background-color: #0070b0;
+  background-color: #1abc9c;
 }
 
 
@@ -226,7 +237,7 @@ bt {
 
 .glyphicon {
 	font-size: 40px;
-	color: #0070b0;
+	color: #1abc9c;
 }
 #social:hover {
   -webkit-transform: scale(1.1);
@@ -282,93 +293,4 @@ bt {
 #email-result{
   padding: 15px;
   margin-top: 10px;
-}
-
-.list-group-item{
-	background-color: transparent;
-}
-
-.skill-name{
-	display: inline-block;
-	font-family: 'Lobster', cursive;
-	font-weight: 400;
-	font-size: 22px;
-	color: #555;
-}
-
-.skill-image{
-	display: inline-block;
-}
-
-.skill-percent{
-	display: inline-block;
-	width:   100%;
-	float: right;
-	background: white;
-	margin-top: 5%;
-}
-
-.projects-count{
-	font-style: italic;
-	font-weight: bold;
-	display: inline-block;
-	margin-right: 10px;
-	font-size: 22px;
-	font-family: 'Lobster', cursive;
-	position: absolute;
-	right: 5px;
-	top	 : 20%;
-	text-decoration: underline;
-	cursor: pointer;
-}
-
-.project-name{
-	display: inline-block;
-	font-family: 'Lobster', cursive;
-	font-weight: 400;
-	font-size: 22px;
-	color: #0070b0;
-	left: 50%;
-	position: absolute;
-	margin-top: 20px;
-	transform: translate(-50%, -50%);
-}
-
-.project-image{
-	display: inline-block;
-}
-
-.project-description{
-	display: inline-block;
-	top: 30%;
-	position: absolute;
-	margin-left : 30px;
-	margin-right : 30px;
-	font-size: 18px;
-}
-
-.project-date{
-	font-style: italic;
-	font-weight: bold;
-	color: darkred;
-	display: inline-block;
-	margin-left: 30px;
-	font-size: 20px;
-	font-family: 'Lobster', cursive;
-	position: absolute;
-	bottom: 5px;
-}
-
-.skills-count{
-	font-style: italic;
-	font-weight: bold;
-	display: inline-block;
-	margin-right: 10px;
-	font-size: 22px;
-	font-family: 'Lobster', cursive;
-	position: absolute;
-	right: 5px;
-	bottom: 5px;
-	text-decoration: underline;
-	cursor: pointer;
 }

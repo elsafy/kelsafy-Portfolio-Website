@@ -1,0 +1,28 @@
+<!-- +++++ Welcome Section +++++ -->
+<div id="ww">
+  <div class="container">
+    <div class="row mt">
+      <div class="col-lg-6 col-lg-offset-3 centered">
+        <h3>{{headline}}</h3>
+      </div>
+    </div>
+    <div class="row mt">
+		<ul class="list-group row">
+			<li class="list-group-item col-xs-6" ng-repeat="skill in skillsArray">
+				<img ng-src="/assets/img/skills/{{skill.image}}" class="img-rounded skill-image" alt="{{skill.name}}"onerror="this.onerror=null;this.src='/assets/img/skills/skills-default.png';" width="80" height="80">
+				<div class="skill-name">{{skill.name}}</div>
+				<a  href="/#/listProjects/{{skill.id}}" class="projects-count">{{skill.projects_count}}</a>
+				<div class="progress skill-percent">
+					<div class="progress-bar" role="progressbar" aria-valuenow="{{skill.percentage}}" aria-valuemin="0" aria-valuemax="100" style="width:{{skill.percentage}}%">
+					  <span class="sr-only">{{skill.percentage}}% Complete</span>{{skill.percentage}}% 
+					</div>
+				</div>
+			</li>
+		</ul>
+    </div>
+    <!-- /row -->
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /ww -->

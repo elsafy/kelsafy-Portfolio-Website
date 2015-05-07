@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="kelsafy">
+<html lang="en" ng-app="kelsafy" ng-controller="mainController">
 
 <head>
   <meta charset="utf-8">
@@ -9,12 +9,14 @@
   <meta name="author" content="">
   <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-  <title>Karim El Safy</title>
+  <title>{{name}}</title>
   <!-- Bootstrap core CSS -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
   <!-- Custom styles for this template -->
   <link href="assets/css/main.css" rel="stylesheet">
-  <script src="assets/js/jquery-1.10.2.min.js"></script>
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+  <script src="assets/js/jquery-1.11.1.min.js"></script>
   <script data-require="angular.js@1.4.0-rc.0" data-semver="1.4.0-rc.0" src="assets/js/angular.min.js"></script>
   <script src="assets/js/angular-route.min.js"></script>
   <script src="assets/js/app.js"></script>
@@ -37,15 +39,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">Karim El Safy</a>
+        <a class="navbar-brand" href="/#/">{{name}}</a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a>Work</a>
+          <li><a href="/#/listProjects">Projects</a>
           </li>
-          <li><a>About</a>
+          <li><a href="/#/listSkills">Skills</a>
           </li>
-          <li><a>Skills</a>
+          <li><a href="/#/contact">Contact Me</a>
           </li>
           <li><a>This WebSite!</a>
           </li>
@@ -60,34 +62,15 @@
   <!-- +++++ Footer Section +++++ -->
 
   <div id="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <h4>My Bunker</h4>
-          <p>
-            <br/>+201007277077,
-            <br/>Egypt, Alexandria.
-          </p>
-        </div>
-        <!-- /col-lg-4 -->
-<div class="col-lg-4">
-        </div>
-        <div class="col-lg-4">
-          <h4>My Links</h4>
-          <p>
-            <a href="https://www.linkedin.com/in/karimelsafy">LinkedIn</a>
-            <br/>
-            <br/>
-            <a href="https://www.facebook.com/karim.elsafy">Facebook</a>
-          </p>
-        </div>
-        <!-- /col-lg-4 -->
-
-        
-        <!-- /col-lg-4 -->
-
+    <div>
+      <div class="text-center center-block">
+        <br />
+        <a href="{{facebook}}"><i id="social" class="fa fa-facebook circle fa-2x social-fb"></i></a>
+        <a href="{{linkedin}}"><i id="social" class="fa fa-linkedin circle fa-2x social-ln"></i></a>
+        <a href="mailto:{{email}}"><i id="social" class="fa fa-envelope circle fa-2x social-em"></i></a>
+        <a href="tel:{{phone}}"><i id="social" class="fa fa-phone circle fa-2x social-cl"></i></a>
+        <a href="{{location}}"><i id="social" class="fa  fa-map-marker circle fa-2x social-pn"></i></a>
       </div>
-
     </div>
   </div>
 
