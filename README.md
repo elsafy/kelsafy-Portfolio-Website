@@ -1,2 +1,2 @@
 # kelsafy
-personal website based on angularjs + bootstrap + jquery and other stuff
+personal website based on angularjs + bootstrap + php/mysql and other stuff
