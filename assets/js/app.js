@@ -66,22 +66,43 @@
 	
 	var ListProjectsController = function($scope, $http, $routeParams){
 		var url = 'http://kelsafy.com/backend/getAllProjects.php';
-		if($routeParams.projectId == undefined){
+		if($routeParams.projectId == undefined && $routeParams.experienceId == undefined){
 			$scope.headline = "My Projects";
-		} else{
+		} else if($routeParams.projectId != undefined ){
 			url += "?skillId=" + $routeParams.projectId;
+		} else if($routeParams.experienceId != undefined ){
+			url += "?companyId=" + $routeParams.experienceId;
 		}
 		$http({
 			method  : 'GET',
 			dataType: 'jsonp',
 			url     : url,
 		}).success(function(data){
-			if($scope.headline == undefined)
+			if($scope.headline == undefined && data["name"] != null)
 				$scope.headline = "projects used skill: " + data["name"];
+			if($scope.headline == undefined && data["companyName"] != null)
+				$scope.headline = "projects at: " + data["companyName"];
 			$scope.projectsArray = data["projects"];
 		});
 	};
 
+	var listExperienceController = function($scope, $http, $sce){
+		var url = 'http://kelsafy.com/backend/getExperience.php';
+		$http({
+			method  : 'GET',
+			dataType: 'jsonp',
+			url     : url,
+		}).success(function(data){
+			$scope.experienceArray = data;
+			$.getJSON("assets/data/info.json", function( data ) {
+				$scope.$apply(function(){
+					$scope.education = data.education;
+					$scope.education_date = data.education_date;
+				});
+			});
+		});
+	};
+	
 	var app = angular.module("kelsafy", ['ngRoute']);
 	app.config(function($routeProvider){
 		$routeProvider
@@ -103,6 +124,12 @@
 			}).when("/listProjects/:projectId", {
 				templateUrl: "/listProjects.html",
 				controller: "ListProjectsController"
+			}).when("/listProjects/experience/:experienceId", {
+				templateUrl: "/listProjects.html",
+				controller: "ListProjectsController"
+			}).when("/listExperience", {
+				templateUrl: "/listExperience.html",
+				controller: "listExperienceController"
 			}).otherwise({redirectTo: "/"});
 	});
 
@@ -110,6 +137,7 @@
 		.controller("AboutController", ["$scope","$http","$sce", AboutController])
     	.controller("ContactController", ["$scope","$http","$sce", ContactController])
 		.controller("ListSkillsController", ["$scope","$http", "$routeParams", ListSkillsController])
-		.controller("ListProjectsController", ["$scope","$http", "$routeParams", ListProjectsController]);
+		.controller("ListProjectsController", ["$scope","$http", "$routeParams", ListProjectsController])
+		.controller("listExperienceController", ["$scope","$http", "$sce", listExperienceController]);
 	
 })();

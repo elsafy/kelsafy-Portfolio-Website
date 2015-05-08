@@ -372,3 +372,51 @@ bt {
 	text-decoration: underline;
 	cursor: pointer;
 }
+
+#education{
+	font-weight: bold;
+	font-size: 18px;
+	color: brown;
+}
+
+#education_date{
+	font-weight: bold;
+	font-size: 18px;
+	font-style: italic;
+	color: darkblue;
+}
+
+.experience-name{
+	display: inline-block;
+	font-weight: 400;
+	font-size: 22px;
+	color: #0070b0;
+	left: 50%;
+	position: absolute;
+	margin-top: 20px;
+	transform: translate(-50%, -50%);
+}
+
+.experience-image{
+	display: inline-block;
+}
+
+.experience-description{
+	display: inline-block;
+	top: 30%;
+	position: absolute;
+	margin-left : 30px;
+	margin-right : 30px;
+	font-size: 18px;
+}
+
+.experience-date{
+	font-style: italic;
+	font-weight: bold;
+	color: darkred;
+	display: inline-block;
+	margin-left: 30px;
+	font-size: 20px;
+	position: absolute;
+	bottom: 5px;
+}
