@@ -9,18 +9,18 @@
 	$skillId = $_GET["skillId"];
 	$companyId = $_GET["companyId"];
 	if($skillId == NULL && $companyId == NULL){
-		$query = "SELECT p.*, COUNT(l.skillId) AS skills_count FROM {$table} p Left JOIN {$tableLinks} l ON l.projectId =p.id group by p.id order by p.id" or die("Error in the consult.." . mysqli_error($link));
+		$query = "SELECT p.*, COUNT(l.skillId) AS skills_count FROM {$table} p Left JOIN {$tableLinks} l ON l.projectId =p.id group by p.id order by p.id desc" or die("Error in the consult.." . mysqli_error($link));
 		$skillName = "all";
 	} else{
 		if($skillId != NULL){
-			$query = "SELECT p.*  FROM {$table} p Left JOIN {$tableLinks} l ON l.projectId = p.id where l.skillId = $skillId group by p.id order by l.id" or die("Error in the consult.." . mysqli_error($link));;
+			$query = "SELECT p.*  FROM {$table} p Left JOIN {$tableLinks} l ON l.projectId = p.id where l.skillId = $skillId group by p.id order by p.id" or die("Error in the consult.." . mysqli_error($link));;
 			$skillNameQuery = "select s.name FROM {$tableSkills} s where s.id = $skillId" or die("Error in the consult.." . mysqli_error($link));
 			$skillNameResult = $link->query($skillNameQuery); 
 			$r = mysqli_fetch_assoc($skillNameResult);
 			$skillName = $r["name"];
 		}
 		if($companyId != NULL){
-			$query = $query = "SELECT p.*, COUNT(l.skillId) AS skills_count FROM {$table} p Left JOIN {$tableLinks} l ON l.projectId =p.id where p.companyid = $companyId group by p.id order by p.id" or die("Error in the consult.." . mysqli_error($link));
+			$query = $query = "SELECT p.*, COUNT(l.skillId) AS skills_count FROM {$table} p Left JOIN {$tableLinks} l ON l.projectId =p.id where p.companyid = $companyId group by p.id order by p.id desc" or die("Error in the consult.." . mysqli_error($link));
 			$companyNameQuery = "select c.company FROM {$tableCompany} c where c.id = $companyId" or die("Error in the consult.." . mysqli_error($link));
 			$companyNameResult = $link->query($companyNameQuery); 
 			$r = mysqli_fetch_assoc($companyNameResult);

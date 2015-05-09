@@ -286,6 +286,7 @@ bt {
 
 .list-group-item{
 	background-color: transparent;
+	border: 3px solid black;
 }
 
 .skill-name{
@@ -351,11 +352,9 @@ bt {
 	font-style: italic;
 	font-weight: bold;
 	color: darkred;
-	display: inline-block;
-	margin-left: 30px;
+	margin-left: 180px;
 	font-size: 20px;
 	font-family: 'Lobster', cursive;
-	position: absolute;
 	bottom: 5px;
 }
 
@@ -414,9 +413,7 @@ bt {
 	font-style: italic;
 	font-weight: bold;
 	color: darkred;
-	display: inline-block;
-	margin-left: 30px;
+	margin-left: 180px;
 	font-size: 20px;
-	position: absolute;
 	bottom: 5px;
 }
