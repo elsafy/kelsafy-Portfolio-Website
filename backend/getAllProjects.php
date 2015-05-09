@@ -13,7 +13,7 @@
 		$skillName = "all";
 	} else{
 		if($skillId != NULL){
-			$query = "SELECT p.*  FROM {$table} p Left JOIN {$tableLinks} l ON l.projectId = p.id where l.skillId = $skillId group by p.id order by p.id" or die("Error in the consult.." . mysqli_error($link));;
+			$query = "SELECT p.*  FROM {$table} p Left JOIN {$tableLinks} l ON l.projectId = p.id where l.skillId = $skillId group by p.id order by p.id desc" or die("Error in the consult.." . mysqli_error($link));;
 			$skillNameQuery = "select s.name FROM {$tableSkills} s where s.id = $skillId" or die("Error in the consult.." . mysqli_error($link));
 			$skillNameResult = $link->query($skillNameQuery); 
 			$r = mysqli_fetch_assoc($skillNameResult);
