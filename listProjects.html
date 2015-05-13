@@ -10,10 +10,10 @@
 		<ul class="list-group row">
 			<li class="list-group-item" ng-repeat="project in projectsArray">
 				<img ng-src="/assets/img/projects/{{project.image}}" class="img-rounded project-image" alt="{{project.name}}"onerror="this.onerror=null;this.src='/assets/img/projects/project-default.png';" width="150" height="150">
-				<div class="project-name">{{project.name}}</div>
+				<div class="project-name"><a class="project-details-link" href="/#/projectDetails/{{project.id}}">{{project.name}}</a></div>
 				<div class="project-description">{{project.description}}</div>
 				<div class="project-date">{{project.startdate}} to {{project.enddate}}</div>
-				<a  href="/#/listSkills/{{project.id}}" class="skills-count">{{project.skills_count}}</a>
+				<a href="/#/listSkills/{{project.id}}" class="skills-count">{{project.skills_count}}</a>
 			</li>
 		</ul>
     </div>

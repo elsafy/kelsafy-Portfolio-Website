@@ -28,7 +28,8 @@ h1 {
 p {
     line-height: 28px;
     margin-bottom: 25px;
-    font-size: 16px;
+    font-size: 21px;
+	white-space:pre;
 }
 
 .centered {
@@ -416,4 +417,29 @@ bt {
 	margin-left: 180px;
 	font-size: 20px;
 	bottom: 5px;
+}
+
+.project-description-headline{
+	text-decoration: underline;
+	margin-top: 50px;
+}
+
+.project-details-date{
+	font-style: italic;
+	font-weight: bold;
+	color: darkred;
+	font-size: 20px;
+	font-family: 'Lobster', cursive;
+	bottom: 5px;
+}
+
+.project-screenshoot{
+	display: block;
+	margin:	50px;
+	margin-left: auto;
+    margin-right: auto 
+}
+
+.project-details-link{
+	text-decoration: underline;
 }

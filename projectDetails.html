@@ -1,0 +1,28 @@
+<!-- +++++ Welcome Section +++++ -->
+<div id="ww">
+  <div class="container">
+    <div class="row">
+      <div class="centered">
+        <h1>{{projectName}}</h1>
+		<img ng-src="/assets/img/projects/{{projectImage}}" class="img-rounded project-image" alt="{{projectName}}"onerror="this.onerror=null;this.src='/assets/img/projects/project-default.png';" width="250" height="250">
+		<p  class="project-details-date">{{projectStartdate}} to {{projectEnddate}}</p>
+	  </div>
+	  <div class="row">
+		<h3 class = "project-description-headline">Project Description</h3>
+		<p>{{projectDescription}}</p>
+	  </div>
+	  <div class="row">
+		<h3 class = "project-description-headline">Project Functionality</h3>
+		<p>{{projectFunctionality}}</p>
+	  </div>
+	  <div class="row">
+		<h3 class = "project-description-headline">Project Screenshoots</h3>
+		<img ng-repeat="projectScreenshoot in projectScreenshoots" ng-src="/assets/img/projects/{{projectId}}/{{projectScreenshoot}}" class="img-rounded project-screenshoot" alt="{{projectName}}"onerror="this.onerror=null;this.src='/assets/img/projects/project-default.png';">
+	  </div>
+      <!-- /col-lg-8 -->
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /ww -->

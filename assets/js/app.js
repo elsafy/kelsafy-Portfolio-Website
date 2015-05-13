@@ -103,6 +103,30 @@
 		});
 	};
 	
+	var projectDetailsController = function($scope, $http, $routeParams){
+		var url = 'http://kelsafy.com/backend/projectDetails.php?id='+$routeParams.projectId;;
+		$http({
+			method  : 'GET',
+			dataType: 'jsonp',
+			url     : url,
+		}).success(function(data){
+			$scope.projectId = data.id;
+			$scope.projectName = data.name;
+			$scope.projectImage = data.image;
+			$scope.projectDescription = data.description;
+			$scope.projectFunctionality = data.functionality;
+			var startdate = data.startdate;
+			if(startdate == null)
+				startdate = '-';
+			var enddate = data.enddate;
+			if(enddate == null)
+				enddate = '-';
+			$scope.projectStartdate = startdate;
+			$scope.projectEnddate = enddate;
+			$scope.projectScreenshoots = data.screenshoots;
+		});
+	};
+	
 	var app = angular.module("kelsafy", ['ngRoute']);
 	app.config(function($routeProvider){
 		$routeProvider
@@ -130,6 +154,9 @@
 			}).when("/listExperience", {
 				templateUrl: "/listExperience.html",
 				controller: "listExperienceController"
+			}).when("/projectDetails/:projectId", {
+				templateUrl: "/projectDetails.html",
+				controller: "projectDetailsController"
 			}).otherwise({redirectTo: "/"});
 	});
 
@@ -138,6 +165,7 @@
     	.controller("ContactController", ["$scope","$http","$sce", ContactController])
 		.controller("ListSkillsController", ["$scope","$http", "$routeParams", ListSkillsController])
 		.controller("ListProjectsController", ["$scope","$http", "$routeParams", ListProjectsController])
-		.controller("listExperienceController", ["$scope","$http", "$sce", listExperienceController]);
+		.controller("listExperienceController", ["$scope","$http", "$sce", listExperienceController])
+		.controller("projectDetailsController", ["$scope","$http", "$routeParams", projectDetailsController]);
 	
 })();
