@@ -1,0 +1,29 @@
+<!-- +++++ Welcome Section +++++ -->
+<div id="ww">
+  <div class="container">
+    <div class="row mt">
+      <div class="col-lg-6 col-lg-offset-3 centered">
+        <h3>Education</h3>
+		<p id= "education">{{education}}</p>
+		<p id= "education_date">{{education_date}}</p>
+		<br><br> <br> 
+		<h3>Experience</h3>
+      </div>
+    </div>
+    <div class="row mt">
+		<ul class="list-group row">
+			<li class="list-group-item" ng-repeat="experience in experienceArray">
+				<img ng-src="/assets/img/experience/{{experience.image}}" class="img-rounded experience-image" alt="{{experience.name}}"onerror="this.onerror=null;this.src='/assets/img/experience/company.png';" width="150" height="150">
+				<div class="experience-name">{{experience.title}} at {{experience.company}}</div>
+				<div class="experience-description">{{experience.details}}</div>
+				<div class="experience-date">{{experience.startdate}} to {{experience.enddate}}</div>
+				<a  href="/#/listProjects/experience/{{experience.id}}" class="skills-count">{{experience.projects_count}}</a>
+			</li>
+		</ul>
+    </div>
+    <!-- /row -->
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /ww -->

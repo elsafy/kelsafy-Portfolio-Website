@@ -1,0 +1,17 @@
+{
+	"thisWebsite" : "This website is originally made for fun to practice AngularJS But it turned out to be cool, having my portfolio online, and any one can fork the project from <a href='https://github.com/elsafy/kelsafy'>github</a>, replace your info and contacts in 2-3 small files, create mysql database, fill your experience/projects/skills/links between them, put the database connection in the file and you will have full website with your info/experience/skills and sample projects with screenshots!",
+	"cool" : "So you may be wondering, I have a linkedin profile why I do this?\r\nThe answer would be:\r\n1)You will have a website for your portfolio organized in a cool way, which is appreciated in your resume.\r\n2)The really cool thing here is the links between your skills and your projects where people/recruiters can view how many projects you did with a certain skill/programming language.\r\n3)It will just cost you couple of hours to have your website ready.",
+	"pages" : [
+		"First page which have a picture for you and short words about you ",
+		"Experience page with your education info and places you worked/works for with link to list projects for each company",
+		"Projects page which list your projects with count and link to the skills/languages used in this project.",
+		"Skills page which list your skills whith the percent of how much you are good at it, count and link to the projects did with this skill",
+		"Contact Me page which have a form that any one can send you an email",
+		"And this Page.."
+	],
+	"next" : [
+		"Blog!",
+		"admin console to manage(add/update/delete) your data instead of doing this from the database.",
+		"may be turning this to website where people can register and go to their admin console and have their website as subdomain like mark.kelsafy.com without worrying about deploying/manage your website"
+	]
+}

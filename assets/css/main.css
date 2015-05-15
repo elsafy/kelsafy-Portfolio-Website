@@ -28,7 +28,12 @@ h1 {
 p {
     line-height: 28px;
     margin-bottom: 25px;
-    font-size: 16px;
+    font-size: 18px;
+}
+
+.project-details-p {
+    font-size: 21px;
+	white-space:pre;
 }
 
 .centered {
@@ -286,6 +291,7 @@ bt {
 
 .list-group-item{
 	background-color: transparent;
+	border: 3px solid black;
 }
 
 .skill-name{
@@ -351,11 +357,9 @@ bt {
 	font-style: italic;
 	font-weight: bold;
 	color: darkred;
-	display: inline-block;
-	margin-left: 30px;
+	margin-left: 180px;
 	font-size: 20px;
 	font-family: 'Lobster', cursive;
-	position: absolute;
 	bottom: 5px;
 }
 
@@ -371,4 +375,75 @@ bt {
 	bottom: 5px;
 	text-decoration: underline;
 	cursor: pointer;
+}
+
+#education{
+	font-weight: bold;
+	font-size: 18px;
+	color: brown;
+}
+
+#education_date{
+	font-weight: bold;
+	font-size: 18px;
+	font-style: italic;
+	color: darkblue;
+}
+
+.experience-name{
+	display: inline-block;
+	font-weight: 400;
+	font-size: 22px;
+	color: #0070b0;
+	left: 50%;
+	position: absolute;
+	margin-top: 20px;
+	transform: translate(-50%, -50%);
+}
+
+.experience-image{
+	display: inline-block;
+}
+
+.experience-description{
+	display: inline-block;
+	top: 30%;
+	position: absolute;
+	margin-left : 30px;
+	margin-right : 30px;
+	font-size: 18px;
+}
+
+.experience-date{
+	font-style: italic;
+	font-weight: bold;
+	color: darkred;
+	margin-left: 180px;
+	font-size: 20px;
+	bottom: 5px;
+}
+
+.project-description-headline{
+	text-decoration: underline;
+	margin-top: 50px;
+}
+
+.project-details-date{
+	font-style: italic;
+	font-weight: bold;
+	color: darkred;
+	font-size: 20px;
+	font-family: 'Lobster', cursive;
+	bottom: 5px;
+}
+
+.project-screenshoot{
+	display: block;
+	margin:	50px;
+	margin-left: auto;
+    margin-right: auto 
+}
+
+.project-details-link{
+	text-decoration: underline;
 }

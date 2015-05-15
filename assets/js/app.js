@@ -66,22 +66,80 @@
 	
 	var ListProjectsController = function($scope, $http, $routeParams){
 		var url = 'http://kelsafy.com/backend/getAllProjects.php';
-		if($routeParams.projectId == undefined){
+		if($routeParams.projectId == undefined && $routeParams.experienceId == undefined){
 			$scope.headline = "My Projects";
-		} else{
+		} else if($routeParams.projectId != undefined ){
 			url += "?skillId=" + $routeParams.projectId;
+		} else if($routeParams.experienceId != undefined ){
+			url += "?companyId=" + $routeParams.experienceId;
 		}
 		$http({
 			method  : 'GET',
 			dataType: 'jsonp',
 			url     : url,
 		}).success(function(data){
-			if($scope.headline == undefined)
+			if($scope.headline == undefined && data["name"] != null)
 				$scope.headline = "projects used skill: " + data["name"];
+			if($scope.headline == undefined && data["companyName"] != null)
+				$scope.headline = "projects at: " + data["companyName"];
 			$scope.projectsArray = data["projects"];
 		});
 	};
 
+	var listExperienceController = function($scope, $http, $sce){
+		var url = 'http://kelsafy.com/backend/getExperience.php';
+		$http({
+			method  : 'GET',
+			dataType: 'jsonp',
+			url     : url,
+		}).success(function(data){
+			$scope.experienceArray = data;
+			$.getJSON("assets/data/info.json", function( data ) {
+				$scope.$apply(function(){
+					$scope.education = data.education;
+					$scope.education_date = data.education_date;
+				});
+			});
+		});
+	};
+	
+	var projectDetailsController = function($scope, $http, $routeParams){
+		var url = 'http://kelsafy.com/backend/projectDetails.php?id='+$routeParams.projectId;;
+		$http({
+			method  : 'GET',
+			dataType: 'jsonp',
+			url     : url,
+		}).success(function(data){
+			$scope.projectId = data.id;
+			$scope.projectName = data.name;
+			$scope.projectImage = data.image;
+			$scope.projectDescription = data.description;
+			$scope.projectFunctionality = data.functionality;
+			var startdate = data.startdate;
+			if(startdate == null)
+				startdate = '-';
+			var enddate = data.enddate;
+			if(enddate == null)
+				enddate = '-';
+			$scope.projectStartdate = startdate;
+			$scope.projectEnddate = enddate;
+			$scope.projectScreenshoots = data.screenshoots;
+		});
+	};
+	
+	var thisWebsiteController = function($scope, $http, $sce){
+		console.log("1");
+		$.getJSON("assets/data/thisweb.json", function( data ) {
+			console.log("2");
+			$scope.$apply(function(){
+				$scope.thisWebsite = $sce.trustAsHtml(data.thisWebsite);
+				$scope.cool = $sce.trustAsHtml(data.cool.replace(new RegExp('\r?\n','g'), '<br />'));
+				$scope.pagesArray = data.pages;
+				$scope.nextArray = data.next;
+			});
+		});
+	};
+	
 	var app = angular.module("kelsafy", ['ngRoute']);
 	app.config(function($routeProvider){
 		$routeProvider
@@ -103,6 +161,18 @@
 			}).when("/listProjects/:projectId", {
 				templateUrl: "/listProjects.html",
 				controller: "ListProjectsController"
+			}).when("/listProjects/experience/:experienceId", {
+				templateUrl: "/listProjects.html",
+				controller: "ListProjectsController"
+			}).when("/listExperience", {
+				templateUrl: "/listExperience.html",
+				controller: "listExperienceController"
+			}).when("/projectDetails/:projectId", {
+				templateUrl: "/projectDetails.html",
+				controller: "projectDetailsController"
+			}).when("/thisWebsite", {
+				templateUrl: "/thisWebsite.html",
+				controller: "thisWebsiteController"
 			}).otherwise({redirectTo: "/"});
 	});
 
@@ -110,6 +180,9 @@
 		.controller("AboutController", ["$scope","$http","$sce", AboutController])
     	.controller("ContactController", ["$scope","$http","$sce", ContactController])
 		.controller("ListSkillsController", ["$scope","$http", "$routeParams", ListSkillsController])
-		.controller("ListProjectsController", ["$scope","$http", "$routeParams", ListProjectsController]);
+		.controller("ListProjectsController", ["$scope","$http", "$routeParams", ListProjectsController])
+		.controller("listExperienceController", ["$scope","$http", "$sce", listExperienceController])
+		.controller("projectDetailsController", ["$scope","$http", "$routeParams", projectDetailsController])
+		.controller("thisWebsiteController", ["$scope","$http", "$sce", thisWebsiteController]);
 	
 })();

@@ -1,0 +1,38 @@
+<!-- +++++ Welcome Section +++++ -->
+<div id="ww">
+  <div class="container">
+    <div class="row">
+      <div class="centered">
+        <h1>This WebSite!</h1>
+	  </div>
+	  <div class="row">
+		<h3 class = "project-description-headline">What is this!</h3>
+		<p ng-bind-html="thisWebsite"></p>
+	  </div>
+	  <div class="row">
+		<h3 class = "project-description-headline">What is cool here</h3>
+		<p ng-bind-html="cool"></p>
+	  </div>
+	  <div class="row">
+		<h3 class = "project-description-headline">WebSite Pages</h3>
+		<ul>
+			<li ng-repeat="page in pagesArray">
+				<p>{{page}}</p>
+			</li>
+		</ul>
+	  </div>
+	  <div class="row">
+		<h3 class = "project-description-headline">What's next?</h3>
+		<ul>
+			<li ng-repeat="next in nextArray">
+				<p>{{next}}</p>
+			</li>
+		</ul>
+	  </div>
+      <!-- /col-lg-8 -->
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /ww -->

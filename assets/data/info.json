@@ -5,5 +5,7 @@
 	"email" : "karim.elsafy@gmail.com",
 	"phone" : "+201007277077",
 	"location" : "https://goo.gl/maps/NBtFh",
+	"education": "Faculty of Engineering – Computer Science Department, Alexandria, Egypt\nBachelor’s degree, grade: Very Good(77.39%)",
+	"education_date": "July 2011",
 	"description" : "Hi This is Karim El Safy, Software Engineer, this website contains informations about me, my work, samples of previous work, and some blog posts. I don't talk too much so don't expect alot of blog posts. The source code of this website is open source at <a href='https://github.com/elsafy/kelsafy'>github</a>, feel free to do whatever you want!"
 }
