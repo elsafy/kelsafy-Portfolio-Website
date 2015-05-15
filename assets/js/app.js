@@ -127,6 +127,19 @@
 		});
 	};
 	
+	var thisWebsiteController = function($scope, $http, $sce){
+		console.log("1");
+		$.getJSON("assets/data/thisweb.json", function( data ) {
+			console.log("2");
+			$scope.$apply(function(){
+				$scope.thisWebsite = $sce.trustAsHtml(data.thisWebsite);
+				$scope.cool = $sce.trustAsHtml(data.cool.replace(new RegExp('\r?\n','g'), '<br />'));
+				$scope.pagesArray = data.pages;
+				$scope.nextArray = data.next;
+			});
+		});
+	};
+	
 	var app = angular.module("kelsafy", ['ngRoute']);
 	app.config(function($routeProvider){
 		$routeProvider
@@ -157,6 +170,9 @@
 			}).when("/projectDetails/:projectId", {
 				templateUrl: "/projectDetails.html",
 				controller: "projectDetailsController"
+			}).when("/thisWebsite", {
+				templateUrl: "/thisWebsite.html",
+				controller: "thisWebsiteController"
 			}).otherwise({redirectTo: "/"});
 	});
 
@@ -166,6 +182,7 @@
 		.controller("ListSkillsController", ["$scope","$http", "$routeParams", ListSkillsController])
 		.controller("ListProjectsController", ["$scope","$http", "$routeParams", ListProjectsController])
 		.controller("listExperienceController", ["$scope","$http", "$sce", listExperienceController])
-		.controller("projectDetailsController", ["$scope","$http", "$routeParams", projectDetailsController]);
+		.controller("projectDetailsController", ["$scope","$http", "$routeParams", projectDetailsController])
+		.controller("thisWebsiteController", ["$scope","$http", "$sce", thisWebsiteController]);
 	
 })();
