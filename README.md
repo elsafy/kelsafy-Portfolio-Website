@@ -16,7 +16,7 @@ The answer would be:
  * It will just cost you couple of hours to have your website ready.
  
  
- #### Website Pages:
+#### Website Pages:
 
  * First page which have a picture for you and short words about you.
  * Experience page with your education info and places you worked/works for with link to list projects for each company.
@@ -25,7 +25,7 @@ The answer would be:
  * Contact Me page which have a form that any one can send you an email.
  * About Website page that have a description for every thing.
 
- #### What's next?
+#### What's next?
  
  * Blog!
  * admin console to manage(add/update/delete) your data instead of doing this from the database.
