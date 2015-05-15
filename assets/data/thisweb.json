@@ -13,5 +13,9 @@
 		"Blog!",
 		"admin console to manage(add/update/delete) your data instead of doing this from the database.",
 		"may be turning this to website where people can register and go to their admin console and have their website as subdomain like mark.kelsafy.com without worrying about deploying/manage your website"
+	],
+	"credits" : [
+		"<a href='http://www.blacktie.co/demo/stanley/'>Stanley template</a> for the index page",
+		"<a href='http://www.chaosm.net/blog/2014/05/21/angularjs-contact-form-with-bootstrap-and-phpmailer/'>AngularJS Contact Form with Bootstrap and PHPMailer</a> for contact me page"
 	]
 }

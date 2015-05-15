@@ -128,14 +128,15 @@
 	};
 	
 	var thisWebsiteController = function($scope, $http, $sce){
-		console.log("1");
 		$.getJSON("assets/data/thisweb.json", function( data ) {
-			console.log("2");
 			$scope.$apply(function(){
+				$scope.trustAsHtml = $sce.trustAsHtml;
 				$scope.thisWebsite = $sce.trustAsHtml(data.thisWebsite);
 				$scope.cool = $sce.trustAsHtml(data.cool.replace(new RegExp('\r?\n','g'), '<br />'));
 				$scope.pagesArray = data.pages;
 				$scope.nextArray = data.next;
+				$scope.creditsArray = data.credits;
+				
 			});
 		});
 	};

@@ -31,6 +31,10 @@ The answer would be:
  * admin console to manage(add/update/delete) your data instead of doing this from the database.
  * may be turning this to website where people can register and go to their admin console and have their website as subdomain like mark.kelsafy.com without worrying about deploying/manage your website.
 
+#### Credits
+ 
+ * [Stanley template] (http://www.blacktie.co/demo/stanley) for the index page.
+ * [AngularJS Contact Form with Bootstrap and PHPMailer] (http://www.chaosm.net/blog/2014/05/21/angularjs-contact-form-with-bootstrap-and-phpmailer/) for contact me page.
 
 ## HOW TO USE
 
