@@ -61,4 +61,6 @@ $dbname = 'yourdatabasename';
 
 9) for each project id: fill the table projects_skills that have the links between this project and skills that have 2 params: the project id and the skill id, one record for each skill.
 
-10) Now deploy the project if you are asking for free web hosting websites contact me.
+10) put screenshots for your reviews under "assets/img/reviews".
+
+11) Now deploy the project if you are asking for free web hosting websites contact me.
