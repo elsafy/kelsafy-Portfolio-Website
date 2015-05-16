@@ -128,15 +128,27 @@
 	};
 	
 	var thisWebsiteController = function($scope, $http, $sce){
-		console.log("1");
 		$.getJSON("assets/data/thisweb.json", function( data ) {
-			console.log("2");
 			$scope.$apply(function(){
+				$scope.trustAsHtml = $sce.trustAsHtml;
 				$scope.thisWebsite = $sce.trustAsHtml(data.thisWebsite);
 				$scope.cool = $sce.trustAsHtml(data.cool.replace(new RegExp('\r?\n','g'), '<br />'));
 				$scope.pagesArray = data.pages;
 				$scope.nextArray = data.next;
+				$scope.creditsArray = data.credits;
+				
 			});
+		});
+	};
+	
+	var reviewsController = function($scope, $http, $routeParams){
+		var url = 'http://kelsafy.com/backend/reviews.php';
+		$http({
+			method  : 'GET',
+			dataType: 'jsonp',
+			url     : url,
+		}).success(function(data){
+			$scope.reviews = data;
 		});
 	};
 	
@@ -173,6 +185,9 @@
 			}).when("/thisWebsite", {
 				templateUrl: "/thisWebsite.html",
 				controller: "thisWebsiteController"
+			}).when("/reviews", {
+				templateUrl: "/reviews.html",
+				controller: "reviewsController"
 			}).otherwise({redirectTo: "/"});
 	});
 
@@ -183,6 +198,7 @@
 		.controller("ListProjectsController", ["$scope","$http", "$routeParams", ListProjectsController])
 		.controller("listExperienceController", ["$scope","$http", "$sce", listExperienceController])
 		.controller("projectDetailsController", ["$scope","$http", "$routeParams", projectDetailsController])
-		.controller("thisWebsiteController", ["$scope","$http", "$sce", thisWebsiteController]);
+		.controller("thisWebsiteController", ["$scope","$http", "$sce", thisWebsiteController])
+		.controller("reviewsController", ["$scope","$http", "$sce", reviewsController]);
 	
 })();

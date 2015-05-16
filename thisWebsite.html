@@ -29,6 +29,14 @@
 			</li>
 		</ul>
 	  </div>
+	  <div class="row">
+		<h3 class = "project-description-headline">Credits:</h3>
+		<ul>
+			<li ng-repeat="credits in creditsArray">
+				<p ng-bind-html="trustAsHtml(credits)"></p>
+			</li>
+		</ul>
+	  </div>
       <!-- /col-lg-8 -->
     </div>
     <!-- /row -->
