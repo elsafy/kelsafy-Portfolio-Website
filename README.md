@@ -23,6 +23,7 @@ The answer would be:
  * Projects page which list your projects with count and link to the skills/languages used in this project.
  * Skills page which list your skills whith the percent of how much you are good at it, count and link to the projects did with this skill.
  * Contact Me page which have a form that any one can send you an email.
+ * Reviews page which have screenshots for the reviews by the clients or co-workers.
  * About Website page that have a description for every thing.
 
 #### What's next?
