@@ -141,6 +141,17 @@
 		});
 	};
 	
+	var reviewsController = function($scope, $http, $routeParams){
+		var url = 'http://kelsafy.com/backend/reviews.php';
+		$http({
+			method  : 'GET',
+			dataType: 'jsonp',
+			url     : url,
+		}).success(function(data){
+			$scope.reviews = data;
+		});
+	};
+	
 	var app = angular.module("kelsafy", ['ngRoute']);
 	app.config(function($routeProvider){
 		$routeProvider
@@ -174,6 +185,9 @@
 			}).when("/thisWebsite", {
 				templateUrl: "/thisWebsite.html",
 				controller: "thisWebsiteController"
+			}).when("/reviews", {
+				templateUrl: "/reviews.html",
+				controller: "reviewsController"
 			}).otherwise({redirectTo: "/"});
 	});
 
@@ -184,6 +198,7 @@
 		.controller("ListProjectsController", ["$scope","$http", "$routeParams", ListProjectsController])
 		.controller("listExperienceController", ["$scope","$http", "$sce", listExperienceController])
 		.controller("projectDetailsController", ["$scope","$http", "$routeParams", projectDetailsController])
-		.controller("thisWebsiteController", ["$scope","$http", "$sce", thisWebsiteController]);
+		.controller("thisWebsiteController", ["$scope","$http", "$sce", thisWebsiteController])
+		.controller("reviewsController", ["$scope","$http", "$sce", reviewsController]);
 	
 })();
