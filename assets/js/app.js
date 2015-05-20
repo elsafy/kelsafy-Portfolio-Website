@@ -103,7 +103,7 @@
 		});
 	};
 	
-	var projectDetailsController = function($scope, $http, $routeParams){
+	var projectDetailsController = function($scope, $http, $routeParams, $sce){
 		var url = 'http://kelsafy.com/backend/projectDetails.php?id='+$routeParams.projectId;;
 		$http({
 			method  : 'GET',
@@ -113,8 +113,8 @@
 			$scope.projectId = data.id;
 			$scope.projectName = data.name;
 			$scope.projectImage = data.image;
-			$scope.projectDescription = data.description;
-			$scope.projectFunctionality = data.functionality;
+			$scope.projectDescription = $sce.trustAsHtml(data.description.replace(new RegExp('\r?\n','g'), '<br />'));
+			$scope.projectFunctionality = $sce.trustAsHtml(data.functionality.replace(new RegExp('\r?\n','g'), '<br />'));
 			var startdate = data.startdate;
 			if(startdate == null)
 				startdate = '-';
@@ -197,7 +197,7 @@
 		.controller("ListSkillsController", ["$scope","$http", "$routeParams", ListSkillsController])
 		.controller("ListProjectsController", ["$scope","$http", "$routeParams", ListProjectsController])
 		.controller("listExperienceController", ["$scope","$http", "$sce", listExperienceController])
-		.controller("projectDetailsController", ["$scope","$http", "$routeParams", projectDetailsController])
+		.controller("projectDetailsController", ["$scope","$http", "$routeParams", "$sce", projectDetailsController])
 		.controller("thisWebsiteController", ["$scope","$http", "$sce", thisWebsiteController])
 		.controller("reviewsController", ["$scope","$http", "$sce", reviewsController]);
 	
