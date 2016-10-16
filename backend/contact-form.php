@@ -14,13 +14,13 @@ if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['i
 
     //create an instance of PHPMailer
     $mail = new PHPMailer();
-    $mail->From = $_POST['inputEmail'];
-    $mail->FromName = $_POST['inputName'];
+    $mail->From = "Contact me";
+    $mail->FromName = "contactus@kelsafy.com";
     $contactFile = file_get_contents("../assets/data/contact.json");
     $json = json_decode($contactFile, true);
     $mail->Subject = $_POST['inputSubject'];
     $mail->AddAddress($json['toEmail']); //recipient 
-    $mail->Body = "Name: " . $_POST['inputName'] . "\r\n\r\nMessage: " . stripslashes($_POST['inputMessage']);
+    $mail->Body = "Name: " . $_POST['inputName'] . "\r\n\r\nEmail: " . $_POST['inputEmail'] . "\r\n\r\nMessage: " . stripslashes($_POST['inputMessage']);
 
     if (isset($_POST['ref'])) {
         $mail->Body .= "\r\n\r\nRef: " . $_POST['ref'];
