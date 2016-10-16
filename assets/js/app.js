@@ -47,7 +47,7 @@
 	};
 
 	var ListSkillsController = function($scope, $http, $routeParams){
-		var url = 'http://kelsafy.com/backend/getAllSkills.php';
+		var url = 'backend/getAllSkills.php';
 		if($routeParams.skillId == undefined){
 			$scope.headline = "My Skills";
 		} else{
@@ -65,7 +65,7 @@
 	};
 	
 	var ListProjectsController = function($scope, $http, $routeParams){
-		var url = 'http://kelsafy.com/backend/getAllProjects.php';
+		var url = 'backend/getAllProjects.php';
 		if($routeParams.projectId == undefined && $routeParams.experienceId == undefined){
 			$scope.headline = "My Projects";
 		} else if($routeParams.projectId != undefined ){
@@ -87,7 +87,7 @@
 	};
 
 	var listExperienceController = function($scope, $http, $sce){
-		var url = 'http://kelsafy.com/backend/getExperience.php';
+		var url = 'backend/getExperience.php';
 		$http({
 			method  : 'GET',
 			dataType: 'jsonp',
@@ -104,25 +104,28 @@
 	};
 	
 	var projectDetailsController = function($scope, $http, $routeParams, $sce){
-		var url = 'http://kelsafy.com/backend/projectDetails.php?id='+$routeParams.projectId;;
+		var url = 'backend/projectDetails.php?id='+$routeParams.projectId;;
 		$http({
 			method  : 'GET',
 			dataType: 'jsonp',
 			url     : url,
 		}).success(function(data){
+			var startdate = data.startdate,
+			enddate = data.enddate;
+
 			$scope.projectId = data.id;
 			$scope.projectName = data.name;
 			$scope.projectImage = data.image;
-			$scope.projectDescription = $sce.trustAsHtml(data.description.replace(new RegExp('\r?\n','g'), '<br />'));
-			$scope.projectFunctionality = $sce.trustAsHtml(data.functionality.replace(new RegExp('\r?\n','g'), '<br />'));
-			var startdate = data.startdate;
+
 			if(startdate == null)
 				startdate = '-';
-			var enddate = data.enddate;
 			if(enddate == null)
 				enddate = '-';
+
 			$scope.projectStartdate = startdate;
 			$scope.projectEnddate = enddate;
+			$scope.projectDescription = data.description && $sce.trustAsHtml(data.description.replace(new RegExp('\r?\n','g'), '<br />'));
+			$scope.projectFunctionality = data.functionality && $sce.trustAsHtml(data.functionality.replace(new RegExp('\r?\n','g'), '<br />'));
 			$scope.projectScreenshoots = data.screenshoots;
 		});
 	};
@@ -142,7 +145,7 @@
 	};
 	
 	var reviewsController = function($scope, $http, $routeParams){
-		var url = 'http://kelsafy.com/backend/reviews.php';
+		var url = 'backend/reviews.php';
 		$http({
 			method  : 'GET',
 			dataType: 'jsonp',
